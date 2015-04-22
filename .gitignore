@@ -1,0 +1,65 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Visual Studio files
+*.[Oo]bj
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.sdf
+*.opensdf
+*.unsuccessfulbuild
+*.userprefs
+*.resources
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+*/*/[Rr]esource.[Dd]esigner.cs
+
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+[Tt]est-[Rr]esults/
+
+#Project files
+#[Bb]uild/
+
+#Xcode
+xcuserdata*
+
+# Office Temp Files
+~$*
+
+#NuGet
+[Pp]ackages/
+
+#Calabash
+*.irb-history
+
+#Xamarin Components
+[Cc]omponents/
+
+#Testapps
+[Tt]estapps
+*.apk
+*.ipa
+*.app
+*.dsym

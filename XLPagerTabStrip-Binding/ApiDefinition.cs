@@ -1,67 +1,143 @@
-﻿using System;
-
-using UIKit;
+using System;
 using Foundation;
 using ObjCRuntime;
-using CoreGraphics;
+using UIKit;
 
 namespace XLPagerTabStripBinding
 {
-    // The first step to creating a binding is to add your native library ("libNativeLibrary.a")
-    // to the project by right-clicking (or Control-clicking) the folder containing this source
-    // file and clicking "Add files..." and then simply select the native library (or libraries)
-    // that you want to bind.
-    //
-    // When you do that, you'll notice that MonoDevelop generates a code-behind file for each
-    // native library which will contain a [LinkWith] attribute. MonoDevelop auto-detects the
-    // architectures that the native library supports and fills in that information for you,
-    // however, it cannot auto-detect any Frameworks or other system libraries that the
-    // native library may depend on, so you'll need to fill in that information yourself.
-    //
-    // Once you've done that, you're ready to move on to binding the API...
-    //
-    //
-    // Here is where you'd define your API definition for the native Objective-C library.
-    //
-    // For example, to bind the following Objective-C class:
-    //
-    //     @interface Widget : NSObject {
-    //     }
-    //
-    // The C# binding would look like this:
-    //
-    //     [BaseType (typeof (NSObject))]
-    //     interface Widget {
-    //     }
-    //
-    // To bind Objective-C properties, such as:
-    //
-    //     @property (nonatomic, readwrite, assign) CGPoint center;
-    //
-    // You would add a property definition in the C# interface like so:
-    //
-    //     [Export ("center")]
-    //     CGPoint Center { get; set; }
-    //
-    // To bind an Objective-C method, such as:
-    //
-    //     -(void) doSomething:(NSObject *)object atIndex:(NSInteger)index;
-    //
-    // You would add a method definition to the C# interface like so:
-    //
-    //     [Export ("doSomething:atIndex:")]
-    //     void DoSomething (NSObject object, int index);
-    //
-    // Objective-C "constructors" such as:
-    //
-    //     -(id)initWithElmo:(ElmoMuppet *)elmo;
-    //
-    // Can be bound as:
-    //
-    //     [Export ("initWithElmo:")]
-    //     IntPtr Constructor (ElmoMuppet elmo);
-    //
-    // For more information, see http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/
-    //
-}
+    // @protocol XLPagerTabStripChildItem <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface XLPagerTabStripChildItem
+    {
+    	// @required -(NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController;
+    	[Abstract]
+    	[Export ("titleForPagerTabStripViewController:")]
+    	string TitleForPagerTabStripViewController (XLPagerTabStripViewController pagerTabStripViewController);
 
+    	// @optional -(UIImage *)imageForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController;
+    	[Export ("imageForPagerTabStripViewController:")]
+    	UIImage ImageForPagerTabStripViewController (XLPagerTabStripViewController pagerTabStripViewController);
+
+    	// @optional -(UIColor *)colorForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController;
+    	[Export ("colorForPagerTabStripViewController:")]
+    	UIColor ColorForPagerTabStripViewController (XLPagerTabStripViewController pagerTabStripViewController);
+    }
+
+    // @protocol XLPagerTabStripViewControllerDelegate <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface XLPagerTabStripViewControllerDelegate
+    {
+    	// @optional -(void)pagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController updateIndicatorFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+    	[Export ("pagerTabStripViewController:updateIndicatorFromIndex:toIndex:")]
+    	void UpdateIndicatorFromIndex (XLPagerTabStripViewController pagerTabStripViewController, nint fromIndex, nint toIndex);
+
+    	// @optional -(void)pagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController updateIndicatorFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex withProgressPercentage:(CGFloat)progressPercentage;
+    	[Export ("pagerTabStripViewController:updateIndicatorFromIndex:toIndex:withProgressPercentage:")]
+    	void UpdateIndicatorFromIndex (XLPagerTabStripViewController pagerTabStripViewController, nint fromIndex, nint toIndex, nfloat progressPercentage);
+    }
+
+    // @protocol XLPagerTabStripViewControllerDataSource <NSObject>
+    [Protocol, Model]
+    [BaseType (typeof(NSObject))]
+    interface XLPagerTabStripViewControllerDataSource
+    {
+    	// @required -(NSArray *)childViewControllersForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController;
+//    	[Abstract]
+    	[Export ("childViewControllersForPagerTabStripViewController:")]
+    //	[Verify (StronglyTypedNSArray)]
+    	NSObject[] ChildViewControllersForPagerTabStripViewController (XLPagerTabStripViewController pagerTabStripViewController);
+    }
+
+    // @interface XLPagerTabStripViewController : UIViewController <XLPagerTabStripViewControllerDelegate, XLPagerTabStripViewControllerDataSource, UIScrollViewDelegate>
+    [Protocol]
+    [BaseType (typeof(UIViewController))]
+    interface XLPagerTabStripViewController : XLPagerTabStripViewControllerDelegate, XLPagerTabStripViewControllerDataSource, IUIScrollViewDelegate
+    {
+    	// @property (readonly) NSArray * pagerTabStripChildViewControllers;
+    	[Export ("pagerTabStripChildViewControllers")]
+    //	[Verify (StronglyTypedNSArray)]
+    	NSObject[] PagerTabStripChildViewControllers { get; }
+
+    	// @property (retain, nonatomic) UIScrollView * containerView;
+    	[Export ("containerView", ArgumentSemantic.Retain)]
+    	UIScrollView ContainerView { get; set; }
+
+    	[Wrap ("WeakDelegate")]
+    	XLPagerTabStripViewControllerDelegate Delegate { get; set; }
+
+    	// @property (assign, nonatomic) id<XLPagerTabStripViewControllerDelegate> delegate;
+    	[NullAllowed, Export ("delegate", ArgumentSemantic.Assign)]
+    	NSObject WeakDelegate { get; set; }
+
+    	// @property (assign, nonatomic) id<XLPagerTabStripViewControllerDataSource> dataSource;
+    	[Export ("dataSource", ArgumentSemantic.Assign)]
+    	XLPagerTabStripViewControllerDataSource DataSource { get; set; }
+
+    	// @property (readonly) NSUInteger currentIndex;
+    	[Export ("currentIndex")]
+    	nuint CurrentIndex { get; }
+
+    	// @property BOOL skipIntermediateViewControllers;
+    	[Export ("skipIntermediateViewControllers")]
+    	bool SkipIntermediateViewControllers { get; set; }
+
+    	// @property BOOL isProgressiveIndicator;
+    	[Export ("isProgressiveIndicator")]
+    	bool IsProgressiveIndicator { get; set; }
+
+    	// @property BOOL isElasticIndicatorLimit;
+    	[Export ("isElasticIndicatorLimit")]
+    	bool IsElasticIndicatorLimit { get; set; }
+
+    	// -(void)moveToViewControllerAtIndex:(NSUInteger)index;
+    	[Export ("moveToViewControllerAtIndex:")]
+    	void MoveToViewControllerAtIndex (nuint index);
+
+    	// -(void)moveToViewController:(UIViewController *)viewController;
+    	[Export ("moveToViewController:")]
+    	void MoveToViewController (UIViewController viewController);
+
+    	// -(void)reloadPagerTabStripView;
+    	[Export ("reloadPagerTabStripView")]
+    	void ReloadPagerTabStripView ();
+    }
+
+    // @interface XLButtonBarView : UICollectionView
+    [Protocol]
+    [BaseType (typeof(UICollectionView))]
+    interface XLButtonBarView
+    {
+    	// @property (readonly, nonatomic) UIView * selectedBar;
+    	[Export ("selectedBar")]
+    	UIView SelectedBar { get; }
+
+    	// @property UIFont * labelFont;
+    	[Export ("labelFont", ArgumentSemantic.Assign)]
+    	UIFont LabelFont { get; set; }
+
+    	// @property NSUInteger leftRightMargin;
+    	[Export ("leftRightMargin", ArgumentSemantic.Assign)]
+    	nuint LeftRightMargin { get; set; }
+
+    	// -(void)moveToIndex:(NSUInteger)index animated:(BOOL)animated swipeDirection:(XLPagerTabStripDirection)swipeDirection;
+    	[Export ("moveToIndex:animated:swipeDirection:")]
+    	void MoveToIndex (nuint index, bool animated, XLPagerTabStripDirection swipeDirection);
+
+    	// -(void)moveFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex withProgressPercentage:(CGFloat)progressPercentage;
+    	[Export ("moveFromIndex:toIndex:withProgressPercentage:")]
+    	void MoveFromIndex (nint fromIndex, nint toIndex, nfloat progressPercentage);
+    }
+
+    // @interface XLButtonBarPagerTabStripViewController : XLPagerTabStripViewController
+    [Protocol]
+    [BaseType (typeof(XLPagerTabStripViewController))]
+    interface XLButtonBarPagerTabStripViewController
+    {
+    	// @property (readonly, nonatomic) XLButtonBarView * buttonBarView;
+    	[Export ("buttonBarView")]
+    	XLButtonBarView ButtonBarView { get; }
+    }
+
+}

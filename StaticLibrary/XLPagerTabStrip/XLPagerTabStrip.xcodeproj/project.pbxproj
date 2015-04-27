@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18A12DF11AEA1E910039C38D /* libXLPagerTabStrip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A12DE51AEA1E910039C38D /* libXLPagerTabStrip.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18A12DF21AEA1E910039C38D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18A12DDD1AEA1E910039C38D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18A12DE41AEA1E910039C38D;
+			remoteInfo = XLPagerTabStrip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18A12DE31AEA1E910039C38D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		18A12DE51AEA1E910039C38D /* libXLPagerTabStrip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libXLPagerTabStrip.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A12DF01AEA1E910039C38D /* XLPagerTabStripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XLPagerTabStripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A12DF61AEA1E910039C38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18A12DFF1AEA5A090039C38D /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Controllers; path = ../../../XLPagerTabStrip/XLPagerTabStrip/XL/Controllers; sourceTree = "<group>"; };
+		18A12E001AEA5A090039C38D /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Views; path = ../../../XLPagerTabStrip/XLPagerTabStrip/XL/Views; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18A12DE21AEA1E910039C38D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A12DED1AEA1E910039C38D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A12DF11AEA1E910039C38D /* libXLPagerTabStrip.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18A12DDC1AEA1E910039C38D = {
+			isa = PBXGroup;
+			children = (
+				18A12DE71AEA1E910039C38D /* XLPagerTabStrip */,
+				18A12DF41AEA1E910039C38D /* XLPagerTabStripTests */,
+				18A12DE61AEA1E910039C38D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18A12DE61AEA1E910039C38D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18A12DE51AEA1E910039C38D /* libXLPagerTabStrip.a */,
+				18A12DF01AEA1E910039C38D /* XLPagerTabStripTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18A12DE71AEA1E910039C38D /* XLPagerTabStrip */ = {
+			isa = PBXGroup;
+			children = (
+				18A12DFF1AEA5A090039C38D /* Controllers */,
+				18A12E001AEA5A090039C38D /* Views */,
+			);
+			path = XLPagerTabStrip;
+			sourceTree = "<group>";
+		};
+		18A12DF41AEA1E910039C38D /* XLPagerTabStripTests */ = {
+			isa = PBXGroup;
+			children = (
+				18A12DF51AEA1E910039C38D /* Supporting Files */,
+			);
+			path = XLPagerTabStripTests;
+			sourceTree = "<group>";
+		};
+		18A12DF51AEA1E910039C38D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18A12DF61AEA1E910039C38D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18A12DE41AEA1E910039C38D /* XLPagerTabStrip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A12DF91AEA1E910039C38D /* Build configuration list for PBXNativeTarget "XLPagerTabStrip" */;
+			buildPhases = (
+				18A12DE11AEA1E910039C38D /* Sources */,
+				18A12DE21AEA1E910039C38D /* Frameworks */,
+				18A12DE31AEA1E910039C38D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XLPagerTabStrip;
+			productName = XLPagerTabStrip;
+			productReference = 18A12DE51AEA1E910039C38D /* libXLPagerTabStrip.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		18A12DEF1AEA1E910039C38D /* XLPagerTabStripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A12DFC1AEA1E910039C38D /* Build configuration list for PBXNativeTarget "XLPagerTabStripTests" */;
+			buildPhases = (
+				18A12DEC1AEA1E910039C38D /* Sources */,
+				18A12DED1AEA1E910039C38D /* Frameworks */,
+				18A12DEE1AEA1E910039C38D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18A12DF31AEA1E910039C38D /* PBXTargetDependency */,
+			);
+			name = XLPagerTabStripTests;
+			productName = XLPagerTabStripTests;
+			productReference = 18A12DF01AEA1E910039C38D /* XLPagerTabStripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18A12DDD1AEA1E910039C38D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Maksym Grygoriev";
+				TargetAttributes = {
+					18A12DE41AEA1E910039C38D = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					18A12DEF1AEA1E910039C38D = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 18A12DE01AEA1E910039C38D /* Build configuration list for PBXProject "XLPagerTabStrip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18A12DDC1AEA1E910039C38D;
+			productRefGroup = 18A12DE61AEA1E910039C38D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18A12DE41AEA1E910039C38D /* XLPagerTabStrip */,
+				18A12DEF1AEA1E910039C38D /* XLPagerTabStripTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18A12DEE1AEA1E910039C38D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18A12DE11AEA1E910039C38D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A12DEC1AEA1E910039C38D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18A12DF31AEA1E910039C38D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18A12DE41AEA1E910039C38D /* XLPagerTabStrip */;
+			targetProxy = 18A12DF21AEA1E910039C38D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		18A12DF71AEA1E910039C38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18A12DF81AEA1E910039C38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18A12DFA1AEA1E910039C38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		18A12DFB1AEA1E910039C38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		18A12DFD1AEA1E910039C38D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = XLPagerTabStripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18A12DFE1AEA1E910039C38D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = XLPagerTabStripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18A12DE01AEA1E910039C38D /* Build configuration list for PBXProject "XLPagerTabStrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A12DF71AEA1E910039C38D /* Debug */,
+				18A12DF81AEA1E910039C38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A12DF91AEA1E910039C38D /* Build configuration list for PBXNativeTarget "XLPagerTabStrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A12DFA1AEA1E910039C38D /* Debug */,
+				18A12DFB1AEA1E910039C38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A12DFC1AEA1E910039C38D /* Build configuration list for PBXNativeTarget "XLPagerTabStripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A12DFD1AEA1E910039C38D /* Debug */,
+				18A12DFE1AEA1E910039C38D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18A12DDD1AEA1E910039C38D /* Project object */;
+}

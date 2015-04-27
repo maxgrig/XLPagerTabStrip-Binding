@@ -1,6 +1,9 @@
-﻿using System;
+using ObjCRuntime;
 
-namespace XLPagerTabStripBinding
+[Native]
+public enum XLPagerTabStripDirection : ulong
 {
+	Left,
+	Right,
+	None
 }
-
